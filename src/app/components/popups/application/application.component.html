@@ -1,0 +1,30 @@
+<form [formGroup]="form" (ngSubmit)="onApply()" class="app-add-edit-form">
+  <mat-dialog-content class="app-add-edit-form-content">
+    <p class="app-add-edit-form-title">Enter Your Data</p>
+
+    <mat-form-field class="app-form-element form-group" appearance="outline">
+      <mat-label class="app-form-input" appearance="outline">Name</mat-label>
+      <input matInput class="app-form-input" formControlName="name" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="app-form-element form-group">
+      <mat-label class="app-form-input">Email</mat-label>
+      <input matInput class="app-form-input" formControlName="email" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="app-form-element form-group">
+      <mat-label class="app-form-input">Phone</mat-label>
+      <input matInput class="app-form-input" formControlName="phone" />
+    </mat-form-field>
+
+    <button
+      mat-button
+      class="form-group app-add-edit-button"
+      [class.app-add-edit-button-disabled]="form.invalid"
+      [class.app-add-edit-button-enabled]="form.valid"
+      [disabled]="form.invalid"
+    >
+      Apply Now!
+    </button>
+  </mat-dialog-content>
+</form>

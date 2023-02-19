@@ -1,0 +1,146 @@
+<div class="app-signup-content">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="app-signup-form">
+    <h1 class="app-signup-title">Create your account</h1>
+
+    <h3 *ngIf="error" class="app-signup-error-text">{{ error }}</h3>
+
+    <mat-form-field class="app-form-element form-group">
+      <mat-label class="app-form-input">Username</mat-label>
+      <input matInput class="app-form-input" formControlName="name" />
+    </mat-form-field>
+
+    <div
+      *ngIf="formControl['name'].touched && formControl['name'].invalid"
+      class="app-errors-container"
+    >
+      <p
+        *ngIf="
+          formControl['name'].errors && formControl['name'].errors['required']
+        "
+        class="app-alert-danger"
+      >
+        Username is required.
+      </p>
+      <p
+        *ngIf="
+          formControl['name'].errors && formControl['name'].errors['minlength']
+        "
+        class="app-alert-danger"
+      >
+        Name should be 3 character.
+      </p>
+    </div>
+
+    <mat-form-field class="app-form-element form-group">
+      <mat-label class="app-form-input">Email</mat-label>
+      <input matInput class="app-form-input" formControlName="email" />
+    </mat-form-field>
+
+    <div
+      *ngIf="formControl['email'].touched && formControl['email'].invalid"
+      class="app-errors-container"
+    >
+      <p
+        *ngIf="
+          formControl['email'].errors && formControl['email'].errors['required']
+        "
+        class="app-alert-danger"
+      >
+        Email is required.
+      </p>
+      <p
+        *ngIf="
+          formControl['email'].errors && formControl['email'].errors['email']
+        "
+        class="app-alert-danger"
+      >
+        Enter a valid email.
+      </p>
+    </div>
+
+    <mat-form-field class="app-form-element form-group">
+      <mat-label class="app-form-input">Phone</mat-label>
+      <input matInput class="app-form-input" formControlName="phone" />
+    </mat-form-field>
+
+    <div
+      *ngIf="formControl['phone'].touched && formControl['phone'].invalid"
+      class="app-errors-container"
+    >
+      <p
+        *ngIf="
+          formControl['phone'].errors && formControl['phone'].errors['required']
+        "
+        class="app-alert-danger"
+      >
+        Phone is required.
+      </p>
+      <p
+        *ngIf="
+          formControl['phone'].errors && formControl['phone'].errors['pattern']
+        "
+        class="app-alert-danger"
+      >
+        Enter a valid phone.
+      </p>
+    </div>
+
+    <mat-form-field class="app-form-element form-group">
+      <mat-label class="app-form-input">Password</mat-label>
+      <input
+        matInput
+        [type]="hidePassword ? 'password' : 'text'"
+        formControlName="password"
+      />
+      <button
+        type="button"
+        mat-icon-button
+        matSuffix
+        (click)="hidePassword = !hidePassword"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hidePassword"
+      >
+        <mat-icon>{{
+          hidePassword ? "visibility_off" : "visibility"
+        }}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <div
+      *ngIf="formControl['password'].touched && formControl['password'].invalid"
+      class="app-errors-container"
+    >
+      <p
+        *ngIf="
+          formControl['password'].errors &&
+          formControl['password'].errors['required']
+        "
+        class="app-alert-danger"
+      >
+        Password is required.
+      </p>
+      <p
+        *ngIf="
+          formControl['password'].errors &&
+          formControl['password'].errors['minlength']
+        "
+        class="app-alert-danger"
+      >
+        Password must be at least 8 characters.
+      </p>
+    </div>
+
+    <button
+      mat-button
+      class="form-group app-signup-button"
+      [class.app-signup-button-disabled]="form.invalid"
+      [class.app-signup-button-enabled]="form.valid"
+      [disabled]="form.invalid || loading"
+    >
+      Create my account
+    </button>
+    <div class="app-loader" *ngIf="loading">
+      <mat-spinner [diameter]="50"></mat-spinner>
+    </div>
+  </form>
+</div>

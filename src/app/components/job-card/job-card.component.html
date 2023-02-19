@@ -1,0 +1,64 @@
+<mat-card class="app-jobs-card-container">
+  <mat-card-content class="app-jobs-card-content">
+    <div class="app-jobs-card-header-container">
+      <mat-card-header class="app-jobs-card-header"
+        >{{ jobData.name }}
+      </mat-card-header>
+      <div class="app-jobs-card-category">
+        <span class="app-jobs-card-category-text">{{ jobData.category }}</span>
+      </div>
+    </div>
+    <p class="app-jobs-card-description app-jobs-card-texts">
+      {{ jobData.description }}
+    </p>
+    <h2 class="app-jobs-key-header">Responsibilities</h2>
+    <p class="app-jobs-card-texts app-jobs-responsibility-description">
+      {{ jobData.responsibilities }}
+    </p>
+    <h2 class="app-jobs-key-header">Skills</h2>
+    <p class="app-jobs-card-texts app-jobs-responsibility-description">
+      {{ jobData.skills }}
+    </p>
+    <div class="app-jobs-card-footer" *ngIf="!isUserJob">
+      <div class="app-jobs-card-admin-actions" *ngIf="isAdmin">
+        <div class="app-jobs-card-button-container">
+          <button
+            mat-mini-fab
+            color="warn"
+            aria-label="Delete Job"
+            (click)="openDeleteDialog()"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+        <div class="app-jobs-card-button-container">
+          <button
+            mat-mini-fab
+            color="primary"
+            aria-label="Edit Job"
+            (click)="openEditDialog('Edit Job', 'Edit Job', 'update')"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
+      </div>
+      <div>
+        <p *ngIf="isJobExpired">Expired!</p>
+        <p class="app-jobs-card-validity-text" *ngIf="!isJobExpired">
+          Expiring {{ timeRemaining }}
+        </p>
+        <p class="apps-jobs-card-entries-text" *ngIf="!isJobExpired">
+          {{ jobData.maxApplications }} applications left
+        </p>
+        <button
+          mat-button
+          class="app-jobs-apply-button"
+          *ngIf="!isAdmin && !isJobExpired"
+          (click)="openApplyDialog()"
+        >
+          Apply Now!
+        </button>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

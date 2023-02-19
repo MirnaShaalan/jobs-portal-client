@@ -1,0 +1,20 @@
+<div class="app-jobs-container">
+  <div class="app-jobs-header-container">
+    <h1 class="app-jobs-title">My Jobs</h1>
+  </div>
+  <div *ngIf="isLoading">
+    <p>Loading ..</p>
+  </div>
+  <div *ngIf="!isLoading">
+    <div *ngIf="userJobs?.length === 0">
+      <p class="app-job-no-jobs-text">You have not applied for any jobs yet!</p>
+    </div>
+    <div *ngFor="let job of userJobs">
+      <app-job-card
+        [isUserJob]="isUserJob"
+        [isLoggedIn]="isLoggedIn"
+        [jobData]="job"
+      ></app-job-card>
+    </div>
+  </div>
+</div>

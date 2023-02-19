@@ -1,0 +1,49 @@
+<div class="app-jobs-container">
+  <div class="app-jobs-header-container">
+    <h1 class="app-jobs-title">Latest Jobs</h1>
+    <form [formGroup]="form">
+      <mat-form-field
+        appearance="outline"
+        class="app-jobs-search-input form-group"
+      >
+        <input
+          matInput
+          placeholder="Search for a job"
+          formControlName="search"
+        />
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+    </form>
+    <button
+      mat-fab
+      extended
+      class="app-jobs-add-job-button"
+      *ngIf="isAdmin"
+      (click)="openAddJobDialog('Add Job', 'Add Job', 'add')"
+    >
+      <mat-icon>add</mat-icon>
+      Add Job
+    </button>
+  </div>
+  <div *ngIf="isLoading">Loading..</div>
+  <div *ngIf="!isEmptyArray">
+    <div *ngFor="let job of data">
+      <app-job-card
+        [isAdmin]="isAdmin"
+        [isLoggedIn]="isLoggedIn"
+        [jobData]="job"
+      ></app-job-card>
+    </div>
+  </div>
+  <div *ngIf="isEmptyArray">
+    <p class="apps-job-no-jobs-text">There is no jobs available</p>
+  </div>
+  <mat-paginator
+    class="app-jobs-paginator"
+    [length]="numberOfJobs"
+    [pageSize]="3"
+    aria-label="Select page"
+    (page)="pageEvent = $event; onPaginateChange($event)"
+  >
+  </mat-paginator>
+</div>

@@ -1,0 +1,9 @@
+@font-face {
+  font-family: Roboto;
+  src: url("./Roboto/Roboto-Black.ttf") format("truetype"),
+    url("./Roboto/Roboto-Bold.ttf") format("truetype"),
+    url("./Roboto/Roboto-Italic.ttf") format("truetype"),
+    url("./Roboto/Roboto-Light.ttf") format("truetype"),
+    url("./Roboto/Roboto-Medium.ttf") format("truetype"),
+    url("./Roboto/Roboto-Regular.ttf") format("truetype");
+}

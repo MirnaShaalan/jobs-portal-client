@@ -1,0 +1,81 @@
+<div class="app-login-content">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="app-login-form">
+    <h1 class="app-login-title">Login to your account</h1>
+
+    <h3 *ngIf="error" class="app-login-error-text">{{ error }}</h3>
+
+    <mat-form-field class="app-form-element form-group">
+      <mat-label class="app-form-input">Username</mat-label>
+      <input matInput class="app-form-input" formControlName="username" />
+    </mat-form-field>
+
+    <div
+      *ngIf="formControl['username'].touched && formControl['username'].invalid"
+      class="app-errors-container"
+    >
+      <p
+        *ngIf="
+          formControl['username'].errors &&
+          formControl['username'].errors['required']
+        "
+        class="app-alert-danger"
+      >
+        Username is required.
+      </p>
+    </div>
+
+    <mat-form-field class="app-form-element form-group">
+      <mat-label class="app-form-input">Password</mat-label>
+      <input
+        matInput
+        [type]="hide ? 'password' : 'text'"
+        formControlName="password"
+      />
+      <button
+        type="button"
+        mat-icon-button
+        matSuffix
+        (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide"
+      >
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <div
+      *ngIf="formControl['password'].touched && formControl['password'].invalid"
+      class="app-errors-container"
+    >
+      <p
+        *ngIf="
+          formControl['password'].errors &&
+          formControl['password'].errors['required']
+        "
+        class="app-alert-danger"
+      >
+        Password is required.
+      </p>
+    </div>
+
+    <button
+      mat-button
+      class="form-group app-login-button"
+      [class.app-login-button-disabled]="form.invalid"
+      [class.app-login-button-enabled]="form.valid"
+      [disabled]="form.invalid || loading"
+    >
+      Login
+    </button>
+
+    <span class="app-login-signup-text"
+      >Don't have account?
+      <a class="app-login-signup-link" routerLink="/signup"
+        >Sing up now!</a
+      ></span
+    >
+    <div class="app-loader" *ngIf="loading && !error">
+      <mat-spinner [diameter]="50"></mat-spinner>
+    </div>
+  </form>
+</div>

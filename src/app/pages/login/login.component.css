@@ -1,0 +1,79 @@
+.app-login-content {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.app-login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-login-title {
+  font-size: xx-large;
+  font-weight: 200;
+  margin-bottom: 2rem;
+}
+
+.app-form-input {
+  font-weight: 200;
+}
+
+.app-login-signup-text {
+  font-weight: 200;
+  margin-top: 2rem;
+}
+
+.app-login-signup-link {
+  color: #47b5ff;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 300;
+}
+
+.app-login-button {
+  width: 22rem;
+  height: 3rem;
+  font-size: 1.1rem;
+  letter-spacing: 0;
+  color: #fff;
+}
+
+.app-login-button-enabled {
+  background-color: #06283d;
+}
+
+.app-login-button-disabled {
+  background-color: #a7a7a7;
+}
+
+.app-form-element {
+  width: 22rem;
+  font-weight: 200;
+}
+
+.app-alert-danger {
+  color: #f44336;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  font-weight: 200;
+}
+
+.app-errors-container {
+  align-self: flex-start;
+}
+
+.app-loader {
+  margin-top: 2rem;
+}
+
+.app-login-error-text {
+  color: #f44336;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  font-weight: 200;
+}

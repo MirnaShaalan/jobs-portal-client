@@ -1,0 +1,91 @@
+.app-jobs-card-container {
+  margin-top: 2rem;
+}
+
+.app-jobs-card-content {
+  padding: 0;
+  padding: 0 0.7rem 0 0.7rem;
+}
+
+.app-jobs-card-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-jobs-card-header {
+  font-size: 1.2rem;
+  font-weight: 300;
+  padding: 0;
+}
+
+.app-jobs-card-category {
+  background-color: #256d85;
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin: 0;
+}
+
+.app-jobs-card-category-text {
+  color: #fff;
+  font-weight: 300;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.app-jobs-card-texts {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-weight: 200;
+}
+
+.app-jobs-card-description {
+  margin: 0.7rem 0 0.7rem 0;
+}
+
+.app-jobs-responsibility-description {
+  margin: 0 0 0.7rem 0;
+}
+
+.app-jobs-key-header {
+  margin: 0 0 0rem 0;
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+.app-jobs-card-validity-text {
+  font-size: 0.9rem;
+  color: #47894b;
+  margin: 0;
+}
+
+.apps-jobs-card-entries-text {
+  font-size: 0.9rem;
+  color: #f44336;
+}
+
+.app-jobs-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.app-jobs-card-admin-actions {
+  display: flex;
+}
+
+.app-jobs-card-button-container {
+  margin-right: 0.5rem;
+}
+
+.app-jobs-apply-button {
+  letter-spacing: 0;
+  background-color: #06283d;
+  color: #fff;
+  width: 10rem;
+}

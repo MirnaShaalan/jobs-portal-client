@@ -1,0 +1,90 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="app-add-edit-form">
+  <mat-dialog-content class="app-add-edit-form-content">
+    <p class="app-add-edit-form-title">{{ dialogData.title }}</p>
+
+    <mat-form-field class="app-form-element form-group" appearance="outline">
+      <mat-label class="app-form-input" appearance="outline">Name</mat-label>
+      <input matInput class="app-form-input" formControlName="name" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="app-form-element form-group">
+      <mat-label class="app-form-input">Description</mat-label>
+      <textarea
+        matInput
+        class="app-form-input"
+        formControlName="description"
+      ></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="app-form-element form-group">
+      <mat-label class="app-form-input">Responsibilities</mat-label>
+      <textarea
+        matInput
+        class="app-form-input"
+        formControlName="responsibilities"
+      ></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="app-form-element form-group">
+      <mat-label class="app-form-input">Skills</mat-label>
+      <textarea
+        matInput
+        class="app-form-input"
+        formControlName="skills"
+      ></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="app-form-element form-group" appearance="outline">
+      <mat-label class="app-form-input">Category</mat-label>
+      <input matInput class="app-form-input" formControlName="category" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="app-form-element form-group">
+      <mat-label class="app-form-input">Availability Range</mat-label>
+      <mat-date-range-input [rangePicker]="picker" class="app-form-input">
+        <input
+          matStartDate
+          placeholder="From"
+          class="app-form-input"
+          formControlName="startDate"
+        />
+        <input
+          matEndDate
+          placeholder="To"
+          class="app-form-input"
+          formControlName="endDate"
+        />
+      </mat-date-range-input>
+      <mat-datepicker-toggle
+        class="app-form-input"
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-date-range-picker
+        #picker
+        class="app-form-input"
+      ></mat-date-range-picker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="app-form-element form-group">
+      <mat-label class="app-form-input">Maximum Applications</mat-label>
+      <input
+        matInput
+        type="number"
+        placeholder="0"
+        min="0"
+        formControlName="maxApplications"
+      />
+    </mat-form-field>
+
+    <button
+      mat-button
+      class="form-group app-add-edit-button"
+      [class.app-add-edit-button-disabled]="form.invalid"
+      [class.app-add-edit-button-enabled]="form.valid"
+      [disabled]="form.invalid || loading"
+    >
+      {{ dialogData.title }}
+    </button>
+  </mat-dialog-content>
+</form>

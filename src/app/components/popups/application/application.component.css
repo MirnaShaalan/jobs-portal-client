@@ -1,0 +1,36 @@
+.app-add-edit-form-content {
+  display: flex;
+  flex-direction: column;
+  width: 80vh;
+  height: 80vh;
+}
+
+.app-add-edit-form-title {
+  padding: 0;
+  font-size: 2rem;
+  font-weight: 300;
+  margin: 2rem 0 2rem 0;
+  color: #06283d;
+}
+
+.app-form-element {
+  font-weight: 200;
+}
+
+.app-form-input {
+  font-weight: 200;
+}
+
+.app-add-edit-button {
+  font-size: 1.1rem;
+  letter-spacing: 0;
+  color: #fff;
+}
+
+.app-add-edit-button-enabled {
+  background-color: #06283d;
+}
+
+.app-add-edit-button-disabled {
+  background-color: #a7a7a7;
+}

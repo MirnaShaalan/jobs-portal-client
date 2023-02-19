@@ -1,0 +1,32 @@
+<div class="landing-content">
+  <div class="app-landing-texts-container">
+    <p class="app-landing-paragraph-title app-landing-texts">
+      Welcome to the gate that opens on your dream job!
+    </p>
+    <p class="app-landing-paragraph-body app-landing-texts">
+      Start using the app now and get the chance to apply for the jobs that will
+      change your career path, our platform is easy to use and has a lot of
+      splendid features waiting for you!
+    </p>
+    <div class="app-landing-buttons-container">
+      <button
+        *ngIf="!isLoggedIn"
+        class="app-landing-join-button app-landing-buttons"
+        mat-button
+        routerLink="/login"
+      >
+        Join Now!
+      </button>
+      <button
+        class="app-landing-jobs-button app-landing-buttons"
+        mat-button
+        routerLink="/jobs"
+      >
+        Browse Jobs
+      </button>
+    </div>
+  </div>
+  <div class="app-image-container">
+    <img src="/assets/images/landing.png" class="app-landing-image" />
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<mat-toolbar class="app-toolbar">
+  <h1 class="app-title">Jobs Portal</h1>
+  <span class="app-spacer"></span>
+  <div class="buttons-container">
+    <a
+      mat-stroked-button
+      class="app-jobs-button app-landing-buttons"
+      routerLink="/jobs"
+    >
+      Jobs
+    </a>
+
+    <a
+      *ngIf="isLoggedIn && !isAdmin"
+      mat-button
+      color="primary"
+      class="app-my-jobs-button app-landing-buttons"
+      routerLink="/my-jobs"
+    >
+      My Jobs
+    </a>
+
+    <a
+      *ngIf="!isLoggedIn"
+      mat-button
+      color="primary"
+      class="app-landing-buttons"
+      routerLink="/login"
+    >
+      Join Us!
+    </a>
+
+    <button
+      *ngIf="isLoggedIn"
+      (click)="logout()"
+      mat-button
+      color="warn"
+      class="app-landing-buttons"
+    >
+      Logout
+    </button>
+  </div>
+</mat-toolbar>
