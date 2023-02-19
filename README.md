@@ -1,6 +1,5 @@
 # Jobs Portal WebClient
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
+Client side of jobs portal app using Angular version 15.1.6.
 
 ## Important Notes
 
