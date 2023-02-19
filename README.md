@@ -1,6 +1,14 @@
-# LinkDevelopmentJobsPortalWebClient
+# Jobs Portal WebClient
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
+
+## Important Notes
+
+- Please make sure to change the `API_URL` in `src/app/services/global.ts` file upon running server port.
+
+- Admin login Credentials (to edit/add/delete jobs ).
+  - **UserName: admin** 
+  - **Password : admin** 
 
 ## Development server
 
